@@ -17,7 +17,10 @@
  */
 function addRandomFact() {
   const facts =
-      ['I love chocolate', 'I am Bilingual (Spanish and English)', 'I was a soccer goalie for 5 years', 'My horoscope is Capricorn'];
+      ['I love chocolate!', 'I am Bilingual (Spanish and English)', 'I was a soccer goalie for 5 years.', 
+      'I am a Capricorn :)', 'Purple is my favorite color.', 'I LOVE Disney! Tangled is my favorite.',
+      'My sister and I have a 6 year age difference.', 'I have a doggy named Roky.', 
+      'I like to listen to Jhene Aiko and Bruno Mars.'];
 
   // Pick a random fact.
   const fact = facts[Math.floor(Math.random() * facts.length)];

@@ -170,9 +170,10 @@ p {
 }
 
 #randomFact {
-    margin-top: 20px;
-    margin-left: 12%;
+    margin-left: 25%;
+    margin-right: 16%;
     margin-bottom: 10%;
+    width: 160px;
 
     box-shadow: 0px 10px 14px -7px #8a3608;
     background: linear-gradient(to bottom, #eb9988 5%, #ad5745 100%);
@@ -193,6 +194,29 @@ p {
 #randomFact:active {
     position:relative;
 	top:1px;
+}
+
+#ranButtonFormat {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+#fact-container {
+    color: #8f1c11;
+    font-size: 110%;
+    margin-bottom: 5%;
+
+    padding: 20px;
+    text-align: left;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px dotted #c98b7b;
 }
 
 /* CSS for connect.html */
