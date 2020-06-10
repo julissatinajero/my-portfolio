@@ -1,9 +1,285 @@
+/* CSS for index.html */
 #content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+  margin: auto;
+  width: 600px;
+  height: 250px;
+  position: absolute;
+  top: 0px;
+  bottom: 90px;
+  left: 0px;
+  right: 0px;
+
+  background-color: rgba(255, 205, 161, 0.8);
+  border: 3px solid rgba(255, 255, 255, 0.5);
 }
 
-#greeting-container {
-  margin-top: 20px;
+#index_body {
+   background-image: url(images/background.jpeg);
+   background-position: center center;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#mainH1 {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    color: #b04705;
+}
+
+p {
+    display: block;
+    text-align: center;
+    margin:auto;
+}
+
+#buttons {
+    display: block;
+}
+
+#aboutMe_button {
+    margin-left: 80px;
+    margin-right: 40px;
+    width:95px;
+    height:38px;
+    border: 2px solid white;
+    background-color: #b04705;
+    color: WHITE;
+    transition: background-color 500ms, color 500ms;
+}
+
+#gallery_button {
+    margin-left: 34px;
+    margin-right: 40px;
+    width:95px;
+    height:38px;
+    border: 2px solid white;
+    color: white;
+    background-color: #b04705;
+    transition: background-color 500ms, color 500ms;
+}
+
+#connect_button {
+    width:95px;
+    margin-left: 30px;
+    margin-right: 40px;
+    height:38px;
+    border: 2px solid white;
+    color: white;
+    background-color: #b04705;
+    transition: background-color 500ms, color 500ms;
+}
+
+#aboutMe_button:hover {
+    background-color: white;
+    color:#b04705;
+    border: 2px solid #b04705;
+    transition: background-color 500ms, color 500ms;  
+}
+#gallery_button:hover {
+    background-color: white;
+    color:#b04705;
+    border: 2px solid #b04705;
+    transition: background-color 500ms, color 500ms;  
+}
+#connect_button:hover {
+    background-color: white;
+    color:#b04705;
+    border: 2px solid #b04705;
+    transition: background-color 500ms, color 500ms;
+}
+
+/* CSS for gallery.html */
+#galleryH1 {
+    text-align: center;
+    border: double 6px #780e0e;
+    color: #780e0e;
+    margin-bottom: 10px;
+}
+
+.galleryP {
+    color: #780e0e;
+    margin-bottom: 5px;
+}
+
+#column {
+  float: left;
+  width: 28%;
+  margin: 10px;
+  box-shadow: 0 0 5px 1px #555;
+}
+
+#column img {
+  width: 100%;
+  opacity: 1; 
+  cursor: pointer; 
+}
+
+#gallery_body {
+    background-color: rgba(253, 215, 182, 0.9);
+}
+
+/* CSS for aboutMe.html */
+#aboutMeSelfie img{
+    width: 90%;
+}
+
+.name {
+    font-size: 130%;
+}
+.mainSelfie {
+  text-align:center;
+  display:inline-block;
+  list-style:none;
+  position:relative;
+  border:solid 12px #fff;
+  background:#fff;
+  box-shadow:0 0 15px 0px #555;
+}
+
+.julParagraph {
+    display: grid;
+    grid-template-columns: 35% 5% 60%;;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.shortDescription {
+    padding: 20px;
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 45px;
+    font-size: 110%;
+    border: dotted #c98b7b;
+    background-color: #ffede3;
+    color: #8f1c11;
+}
+
+#aboutMe_body {
+    background-color: rgba(253, 215, 182, 0.9);
+}
+
+.aboutMe_Heading {
+    text-align: center;
+    font-size: 250%;
+    color: #8f1c11;
+    border-bottom: 3px solid #b04705;
+}
+
+#randomFact {
+    margin-top: 20px;
+    margin-left: 12%;
+    margin-bottom: 10%;
+
+    box-shadow: 0px 10px 14px -7px #8a3608;
+    background: linear-gradient(to bottom, #eb9988 5%, #ad5745 100%);
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 11px 27px;
+}
+
+#randomFact:hover {
+    background:linear-gradient(to bottom, #ad5745 5%, #eb9988 100%);
+	background-color:#ad5745;
+}
+#randomFact:active {
+    position:relative;
+	top:1px;
+}
+
+/* CSS for connect.html */
+
+#connect_body {
+   background-image: url(images/background.jpeg);
+   background-position: center center;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.connect_Heading {
+    text-align: center;
+    font-size: 260%;
+    color: #b04705;
+    padding-top: 80px;
+}
+
+#icon{
+    list-style: none;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-left: 55px;
+    display: inline-block;
+    padding: 20px 20px;
+    border: 1px solid rgba(255,255,255, 0);
+}
+
+#theBorder {
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 250px;
+    width: 600px;
+    height: 250px;
+    position: absolute;
+    top: 0px;
+    bottom: 90px;
+    left: 0px;
+    right: 0px;
+
+    background-color: rgba(255, 205, 161, 0.9);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.connect_Para {
+    color: #b04705;
+    font-size: 18px;
+}
+
+#iconCredits {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 205, 161, 0.77);
+    color: black;
+}
+
+
+#returnHome_button {
+    width: 90px;
+    height: 30px;
+    border: 2px solid white;
+    background-color: #b04705;
+    color: WHITE;
+    transition: background-color 500ms, color 500ms;
+}
+#returnHome_button:hover {
+    background-color: white;
+    color:#b04705;
+    border: 2px solid #b04705;
+    transition: background-color 500ms, color 500ms;  
+}
+
+.fromGallery {
+    margin-left: 45%;
+    margin-bottom: 18px;
+}
+
+.fromAboutMe {
+    margin-bottom: 20px;
+    margin-left: 45%;
+}
+.fromConnect {
+    position: fixed;
+    margin-left: 250px;
+    margin-top: 200px;
+    margin-bottom: 20px;
 }

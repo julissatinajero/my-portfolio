@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style> 
+      @import url('https://fonts.googleapis.com/css?family=Sofia');
+      @import url('https://fonts.googleapis.com/css?family=Average Sans');
+      @import url('https://fonts.googleapis.com/css?family=Homemade Apple');
+      h1 {font-family: 'Sofia';}
+      p {font-family: 'Average Sans'}
+      p.name{font-family: 'Homemade Apple'}
+    </style>
+    </head>
+  <body id = "aboutMe_body">
+      <h1 class = "aboutMe_Heading">About Me</h1>
+      <button id="returnHome_button" class="fromAboutMe" onclick="location.href='index.html'">Home Page</button>
+      <div>
+      <div class = "julParagraph" >
+      <div id = "aboutMeSelfie">
+        <li class="mainSelfie">
+            <img src="images/selfie2.jpg"/>
+            <p class="name">Julissa Tinajero</p>
+        </li>
+      </div>
+      <p class="empty"></p>
+      <p class = "shortDescription"> Hello! My name is Julissa Tinajero. I am the
+          eldest of two daughters and a very proud Latina. I 
+          grew up in a small agricultural town located in central   
+          California where many immigrants, including my parents,  
+          found job opportunities working in the fields. My upbringing
+          taught me the value of hard work, dedication, and persistance. 
+          Currently, I am attending San Jose State University studying 
+          Computer Science. I am the first in my family to go to college,
+          and I'm passionate about succeeding in the tech field. My hope is to one 
+          day use my experiences to help other young girls like me pursue
+          their own goals.   
+      </p>
+      </div>
+      <button id="randomFact" onclick="addRandomFact()">Random Fact!</button>
+      <div id="fact-container"> </div>
+      </div>
+      </body>
+</html>
