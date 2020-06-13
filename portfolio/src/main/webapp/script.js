@@ -30,3 +30,38 @@ function addRandomFact() {
   factContainer.innerText = fact;
 }
 
+
+//Gets the phrase from /data
+function getDataPhrase() {
+  console.log('Fetching the phrase.');
+
+  // The fetch() function returns a Promise because the request is asynchronous.
+  const responsePromise = fetch('/data');
+
+  // When the request is complete, pass the response into handleResponse().
+  responsePromise.then(handleResponse);
+}
+
+/**
+ * Handles response by converting it to text and passing the result to
+ * addPhraseToDom().
+ */
+function handleResponse(response) {
+  console.log('Handling the response.');
+
+  // response.text() returns a Promise, because the response is a stream of
+  // content and not a simple variable.
+  const textPromise = response.text();
+
+  // When the response is converted to text, pass the result into the
+  // addPhraseToDom() function.
+  textPromise.then(addPhraseToDom);
+}
+
+/** Adds a random quote to the DOM. */
+function addPhraseToDom(thePhrase) {
+  console.log('Adding phrase to dom: ' + thePhrase);
+
+  const phraseContainer = document.getElementById('phrase-container');
+  phraseContainer.innerText = thePhrase;
+}

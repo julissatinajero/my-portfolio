@@ -307,3 +307,14 @@ p {
     margin-top: 200px;
     margin-bottom: 20px;
 }
+
+/* CSS for data.html */
+#servletContent {
+  margin-left: auto;
+  margin-right: auto;
+  width: 650px;
+}
+
+#phrase-container {
+  margin-top: 20px;
+}
