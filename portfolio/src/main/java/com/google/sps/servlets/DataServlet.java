@@ -13,8 +13,10 @@
 // limitations under the License.
 
 package com.google.sps.servlets;
-
+import com.google.gson.Gson;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,10 +26,34 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
+    //private List<String> julissaPhrases; 
+
+    //public void init() {
+    //    julissaPhrases = new ArrayList<>();
+    //    julissaPhrases.add("My nickname is Julie");
+    //    julissaPhrases.add("My nickname is Julie");
+    //    julissaPhrases.add("Im Latina");
+    //}
+
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String thePhrase = "Hello Julissa";
-    response.setContentType("text/html;");
-    response.getWriter().println(thePhrase);
+    List<String> julissaPhrases = new ArrayList<>();
+    julissaPhrases.add("My nickname is Julie");
+    julissaPhrases.add("I have dark hair");
+    julissaPhrases.add("Im Latina");
+
+    // Convert to JSON
+    String json = convertToJsonUsingGson(julissaPhrases);
+
+    // Send the JSON as the response
+    response.setContentType("application/json;");
+    response.getWriter().println(json);
+  }
+
+  private String convertToJsonUsingGson(List<String> phrases) {
+    Gson gson = new Gson();
+    String json = gson.toJson(phrases);
+    return json;
   }
 }

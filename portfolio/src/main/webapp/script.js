@@ -65,3 +65,26 @@ function addPhraseToDom(thePhrase) {
   const phraseContainer = document.getElementById('phrase-container');
   phraseContainer.innerText = thePhrase;
 }
+
+
+
+function getPhraseJSON()
+{
+    fetch('/data').then(response => response.json()).then((phrase) => {
+        const phraseListElement = document.getElementById('phrase-container');
+        phraseListElement.innerHTML = '';
+        phraseListElement.appendChild(
+        createListElement('Message 1: ' + phrase[0]));
+        phraseListElement.appendChild(
+        createListElement('Message 2: ' + phrase[1]));
+        phraseListElement.appendChild(
+        createListElement('Message 3: ' + phrase[2]));
+  });
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
