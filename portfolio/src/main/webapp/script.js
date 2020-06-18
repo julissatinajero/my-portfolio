@@ -12,10 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 /**
  * Adds a random fact to the page.
  */
-function addRandomFact() {
+function addRandomFact() 
+{
   const facts =
       ['I love chocolate!', 'I am Bilingual (Spanish and English)', 'I was a soccer goalie for 5 years.', 
       'I am a Capricorn :)', 'Purple is my favorite color.', 'I LOVE Disney! Tangled is my favorite.',
@@ -31,8 +33,11 @@ function addRandomFact() {
 }
 
 
-//Gets the phrase from /data
-function getDataPhrase() {
+/**
+ * Gets the phrase from /data and adds it to the DOM.
+ */
+function getDataPhrase() 
+{
   console.log('Fetching the phrase.');
 
   // The fetch() function returns a Promise because the request is asynchronous.
@@ -44,7 +49,7 @@ function getDataPhrase() {
 
 /**
  * Handles response by converting it to text and passing the result to
- * addPhraseToDom().
+ * addPhraseToDom(). AKA the long way
  */
 function handleResponse(response) {
   console.log('Handling the response.');
@@ -58,7 +63,7 @@ function handleResponse(response) {
   textPromise.then(addPhraseToDom);
 }
 
-/** Adds a random quote to the DOM. */
+/** Adds a phrase to the DOM. */
 function addPhraseToDom(thePhrase) {
   console.log('Adding phrase to dom: ' + thePhrase);
 
@@ -66,10 +71,8 @@ function addPhraseToDom(thePhrase) {
   phraseContainer.innerText = thePhrase;
 }
 
-
-
 function getPhraseJSON()
-{
+{   // Using arrows is another way to fetch. It does what the code above does in less lines 
     fetch('/data').then(response => response.json()).then((phrase) => {
         const phraseListElement = document.getElementById('phrase-container');
         phraseListElement.innerHTML = '';
@@ -87,4 +90,21 @@ function createListElement(text) {
   const liElement = document.createElement('li');
   liElement.innerText = text;
   return liElement;
+}
+
+/**
+ * Another way to use fetch is by using the async and await keywords. This
+ * allows you to use the return values directly instead of going through
+ * Promises.
+ */
+async function getCommentsUsingAsyncAwait() {
+    const response = await fetch('/data');
+    const theComment = await response.json();
+    const messageList = document.getElementById('message_history');
+
+    theComment.forEach(function(item){
+        const listElement = document.createElement("li");
+        listElement.innerHTML = item;
+        messageList.appendChild(listElement);
+    })
 }

@@ -17,7 +17,6 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +24,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
-public class DataServlet extends HttpServlet {
+public class DataServlet extends HttpServlet 
+{
 
   //@Override
   //public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -42,31 +42,44 @@ public class DataServlet extends HttpServlet {
     //response.getWriter().println(json);
   //}
 
-  //  private String convertToJsonUsingGson(List<String> phrases) {
-  //    Gson gson = new Gson();
-  //    String json = gson.toJson(phrases);
-  //    return json;
-  //  }
+    //private String convertToJsonUsingGson(List<String> phrases) {
+    //  Gson gson = new Gson();
+    //  String json = gson.toJson(phrases);
+    //  return json;
+    //}
 
   List<String> allComments = new ArrayList<>();
-  @Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException 
+    {
+        response.setContentType("application/json");
+        String json = new Gson().toJson(allComments);
+        response.getWriter().println(json);
+    }
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form.
-    String text = getParameter(request, "text-input", "");
-    allComments.add(text);
+        String text = getParameter(request, "text-input", "");
+        allComments.add(text);
 
 
     // Respond with the result.
-    response.setContentType("text/html;");
-    response.getWriter().println(allComments);
-  }
+        response.setContentType("text/html;");
+        response.getWriter().println(allComments);
 
-private String getParameter(HttpServletRequest request, String name, String defaultValue) {
-    String value = request.getParameter(name);
-    if (value == null) {
-      return defaultValue;
+    // Redirect back to the HTML page.
+        response.sendRedirect("/commentSection.html");
     }
-    return value;
-  }
+
+    private String getParameter(HttpServletRequest request, String theText, String defaultValue) 
+    {
+        String value = request.getParameter(theText);
+        if (value == null) 
+        {
+            return defaultValue;
+        }
+        return value;
+    }
 
 }
