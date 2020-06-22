@@ -250,7 +250,7 @@ p {
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 250px;
+    padding-bottom: 230px;
     width: 600px;
     height: 250px;
     position: absolute;
@@ -334,19 +334,19 @@ p {
 
 .messageButton {
     padding: 8px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
     text-align: center;
     border-radius: .30rem;
     border: 1px solid white;
     background-color: #b04705;
     color: WHITE;
     transition: background-color 500ms, color 500ms;
-    margin-bottom: 13px;
+    margin-bottom: 18px;
     margin-left: 43%;
 }
 
-.messageButton2 {
+#messageButton2 {
     padding: 8px;
     padding-left: 12px;
     padding-right: 12px;
@@ -357,7 +357,9 @@ p {
     color: WHITE;
     transition: background-color 500ms, color 500ms;
     margin-bottom: 20px;
-    margin-left: 39.5%;
+    margin-left: 27%;
+    margin-right: 5%;
+    margin-top: 3.7%;
 }
 
 .messageButton:hover {
@@ -367,7 +369,7 @@ p {
     transition: background-color 500ms, color 500ms;
 }
 
-.messageButton2:hover {
+#messageButton2:hover {
     background-color: white;
     color:#b04705;
     border: 1px solid #b04705;
@@ -377,4 +379,28 @@ p {
 #message_history {
     margin-block-end: 5%;
     list-style: inside;
+    background-color: rgba(255, 205, 161, 0.94);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    color:#672c06;
+    margin-top: 8%;
+}
+
+#returnHomeFromComment {
+    text-align: center;
+    border-radius: .30rem;
+    border: 1px solid white;
+    background-color: #b04705;
+    color: WHITE;
+    transition: background-color 500ms, color 500ms;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#returnHomeFromComment:hover {
+    background-color: white;
+    color:#b04705;
+    border: 1px solid #b04705;
+    transition: background-color 500ms, color 500ms;
 }

@@ -13,6 +13,13 @@
 // limitations under the License.
 
 package com.google.sps.servlets;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
+import com.google.sps.data.Message;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,64 +29,49 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
+/** Servlet that handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet 
 {
 
-  //@Override
-  //public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    //List<String> julissaPhrases = new ArrayList<>();
-    //julissaPhrases.add("My nickname is Julie");
-    //julissaPhrases.add("I have dark hair");
-    //julissaPhrases.add("Im Latina");
-
-    // Convert to JSON
-    //String json = convertToJsonUsingGson(julissaPhrases);
-
-    // Send the JSON as the response
-    //response.setContentType("application/json;");
-    //response.getWriter().println(json);
-  //}
-
-    //private String convertToJsonUsingGson(List<String> phrases) {
-    //  Gson gson = new Gson();
-    //  String json = gson.toJson(phrases);
-    //  return json;
-    //}
-
-  List<String> allComments = new ArrayList<>();
-
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException 
     {
+        Query query = new Query("Message").addSort("timestamp", SortDirection.DESCENDING);
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        PreparedQuery results = datastore.prepare(query);
+
+        List<Message> messages = new ArrayList<>();
+        for (Entity entity : results.asIterable()) 
+        {
+            long id = entity.getKey().getId();
+            String comment = (String) entity.getProperty("comment");
+            long timestamp = (long) entity.getProperty("timestamp");
+
+            Message message = new Message(id, comment, timestamp);
+            messages.add(message);
+        }
+        Gson gson = new Gson();
+
         response.setContentType("application/json");
-        String json = new Gson().toJson(allComments);
-        response.getWriter().println(json);
+        response.getWriter().println(gson.toJson(messages));
     }
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // Get the input from the form.
-        String text = getParameter(request, "text-input", "");
-        allComments.add(text);
-
-
-    // Respond with the result.
-        response.setContentType("text/html;");
-        response.getWriter().println(allComments);
-
-    // Redirect back to the HTML page.
-        response.sendRedirect("/commentSection.html");
-    }
-
-    private String getParameter(HttpServletRequest request, String theText, String defaultValue) 
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException 
     {
-        String value = request.getParameter(theText);
-        if (value == null) 
-        {
-            return defaultValue;
-        }
-        return value;
+        String theComment = request.getParameter("text-input");
+        long timestamp = System.currentTimeMillis();
+
+        Entity messageEntity = new Entity("Message");
+        messageEntity.setProperty("comment", theComment);
+        messageEntity.setProperty("timestamp", timestamp);
+
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        datastore.put(messageEntity);
+
+        // Redirect back to the HTML page.
+        response.sendRedirect("/commentSection.html");
     }
 
 }
