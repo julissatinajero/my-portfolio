@@ -12,10 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random fact to the page.
- */
-function addRandomFact() {
+
+//Adds a random fact to the page.
+function addRandomFact(){
   const facts =
       ['I love chocolate!', 'I am Bilingual (Spanish and English)', 'I was a soccer goalie for 5 years.', 
       'I am a Capricorn :)', 'Purple is my favorite color.', 'I LOVE Disney! Tangled is my favorite.',
@@ -30,3 +29,21 @@ function addRandomFact() {
   factContainer.innerText = fact;
 }
 
+// Fetches messages from the server and adds them to the DOM.
+function getMessages() {
+    fetch('/data').then(response => response.json()).then((messages) => {
+    const messageListElement = document.getElementById('message_history');
+    messageListElement.innerHTML = '';
+    for (i = 0; i < messages.length; i++)
+    {
+        messageListElement.appendChild(createListElement(messages[i].comment));
+    }
+    });
+}
+
+// Creates an <li> element containing text
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}

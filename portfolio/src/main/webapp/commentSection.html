@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Message Me</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    </head>
+    <body id = "servletContent">
+
+        <div id="theBorder">
+            <h1 class = "connect_Heading">Messages</h1>
+            <p class="connect_Para">Please leave messages or feedback!</p> 
+
+            <div class="messagesForm">
+            <form action="/data" method="POST">
+                <textarea name="text-input" class="messageBox" rows="4" placeholder="Type your message here"></textarea>
+                <br></br>
+                <button type="submit" class="submitMessageButton">Submit</button> 
+            </form>
+            <div>
+            <button onclick="getMessages()" id="getMessageButton">See Messages</button> 
+            <button id="returnHomeFromComment" onclick="location.href='index.html'">Home Page</button> 
+        </div>
+        <ul id= "message_history"></ul>
+  </body>
+</html> 
