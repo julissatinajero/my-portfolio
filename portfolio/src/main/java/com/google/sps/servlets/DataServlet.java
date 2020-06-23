@@ -31,12 +31,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /** Servlet that handle comments data */
 @WebServlet("/data")
-public class DataServlet extends HttpServlet 
-{
+public class DataServlet extends HttpServlet {
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException 
-    {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Query query = new Query("Message").addSort("timestamp", SortDirection.DESCENDING);
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         PreparedQuery results = datastore.prepare(query);
@@ -58,8 +56,7 @@ public class DataServlet extends HttpServlet
     }
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException 
-    {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String theComment = request.getParameter("text-input");
         long timestamp = System.currentTimeMillis();
 
