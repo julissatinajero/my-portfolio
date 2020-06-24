@@ -35,37 +35,42 @@ p {
 }
 
 #buttons {
-    display: block;
+    display: grid;
+    grid-template-columns: 36% 29% 3%;
 }
 
 #aboutMe_button {
+    border-radius: .30rem;
     margin-left: 80px;
     margin-right: 40px;
     width:95px;
     height:38px;
-    border: 2px solid white;
+    border: 1px solid white;
     background-color: #b04705;
     color: WHITE;
     transition: background-color 500ms, color 500ms;
 }
 
 #gallery_button {
+    border-radius: .30rem;
     margin-left: 34px;
     margin-right: 40px;
     width:95px;
     height:38px;
-    border: 2px solid white;
+    border: 1px solid white;
     color: white;
     background-color: #b04705;
     transition: background-color 500ms, color 500ms;
 }
 
 #connect_button {
+    border-radius: .30rem;
+    display: block;
     width:95px;
     margin-left: 30px;
     margin-right: 40px;
     height:38px;
-    border: 2px solid white;
+    border: 1px solid white;
     color: white;
     background-color: #b04705;
     transition: background-color 500ms, color 500ms;
@@ -74,19 +79,19 @@ p {
 #aboutMe_button:hover {
     background-color: white;
     color:#b04705;
-    border: 2px solid #b04705;
+    border: 1px solid #b04705;
     transition: background-color 500ms, color 500ms;  
 }
 #gallery_button:hover {
     background-color: white;
     color:#b04705;
-    border: 2px solid #b04705;
+    border: 1px solid #b04705;
     transition: background-color 500ms, color 500ms;  
 }
 #connect_button:hover {
     background-color: white;
     color:#b04705;
-    border: 2px solid #b04705;
+    border: 1px solid #b04705;
     transition: background-color 500ms, color 500ms;
 }
 
@@ -280,15 +285,16 @@ p {
 #returnHome_button {
     width: 90px;
     height: 30px;
-    border: 2px solid white;
+    border: 1px solid white;
     background-color: #b04705;
     color: WHITE;
+    border-radius: .30rem;
     transition: background-color 500ms, color 500ms;
 }
 #returnHome_button:hover {
     background-color: white;
     color:#b04705;
-    border: 2px solid #b04705;
+    border: 1px solid #b04705;
     transition: background-color 500ms, color 500ms;  
 }
 
@@ -423,4 +429,29 @@ p {
     color:#b04705;
     border: 1px solid #b04705;
     transition: background-color 500ms, color 500ms;
+}
+
+#messageMe_button {
+    text-align: center;
+    border-radius: .30rem;
+    border: 1px solid white;
+    background-color: #b04705;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    margin-left: 34%;
+    transition: background-color 500ms, color 500ms;
+} 
+
+#messageMe_button:hover {
+    background-color: white;
+    color:#b04705;
+    border: 1px solid #b04705;
+    transition: background-color 500ms, color 500ms;
+}
+
+.spacing {
+    margin: 5.3%;
 }
