@@ -21,7 +21,7 @@ const PAGE_PHRASES = [
 
 var currrentPhrase = 0;
 var letterIndex = 0; 
-var intervalVal;
+var interval;
 
 // Element that holds the text
 var element = document.getElementById("phrases");
@@ -31,7 +31,7 @@ var cursor = document.getElementById("cursor");
 /**
  * Function which implements the typing animation.
  */
-function type() { 
+function typeWord() { 
   var displayedText =  PAGE_PHRASES[currrentPhrase].substring(0, letterIndex + 1);
   console.log(displayedText); 
   element.innerText = displayedText;
@@ -42,9 +42,9 @@ function type() {
     // Hide the cursor
     //cursor.style.display = 'none';
 
-    clearInterval(intervalVal);
+    clearInterval(interval);
     setTimeout(function() {
-      intervalVal = setInterval(deleting, 50);
+      interval = setInterval(deleteWord, 50);
     }, 1000);
 }
 }
@@ -52,7 +52,7 @@ function type() {
 /**
  * Function which implements the deleting effect for the typing animation.
  */
-function deleting() {
+function deleteWord() {
   // Get substring with 1 characater deleted
   var displayedText =  PAGE_PHRASES[currrentPhrase].substring(0, letterIndex - 1);
   element.innerText = displayedText;
@@ -60,7 +60,7 @@ function deleting() {
 
   // If sentence has been deleted then start to display the next sentence
   if(displayedText === '') {
-    clearInterval(intervalVal);
+    clearInterval(interval);
 
     // If current sentence was last then display the first one, else move to the next
     if(currrentPhrase== (PAGE_PHRASES.length - 1))
@@ -73,13 +73,15 @@ function deleting() {
     // Start to display the next sentence after some time
     setTimeout(function() {
         cursor.style.display = 'inline-block';
-        intervalVal = setInterval(type, 130);
+        interval = setInterval(typeWord, 130);
     }, 200);
   }
 }
 
 // Start the typing effect on load
-intervalVal = setInterval(type, 130);
+function start(){
+    interval = setInterval(typeWord, 130);
+}
 
 
 //Adds a random fact to the page.

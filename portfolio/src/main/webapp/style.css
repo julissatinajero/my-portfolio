@@ -2,7 +2,81 @@
 @import url(https://fonts.googleapis.com/css?family=Average%20Sans);
 @import url(https://fonts.googleapis.com/css?family=Homemade%20Apple);
 
-/* CSS for index.html */
+/* CSS for Navigation Bar */
+#nav-button {
+    border-radius: .30rem;
+    width: 150px;
+    height: 63px;
+    border: 1px solid white;
+    background-color: #041154;
+    color: WHITE;
+    transition: background-color 500ms, color 500ms;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 130%;
+    font-family: 'Average Sans';
+}
+
+#nav-button:hover {
+    background-color: white;
+    color:#041154;
+    border: 1px solid #041154;
+    transition: background-color 500ms, color 500ms;  
+}
+
+#nav-bar {
+    width: 85%;
+    margin: auto;
+    font-size: 30px;
+}
+
+#all-nav-links{
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1.5px solid white;
+    border-radius: 1rem;
+    background: #041154; 
+}
+
+#nav-link{
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+#proj-link {
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: white;
+    font-family: 'Average Sans';
+}
+
+/* CSS for background image */
+#background {
+   background-image: url(images/back3.jpg);
+   background-position: center center;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+/* CSS for HomePage */
 #index-container {
     /*margin-top: auto;
     margin-bottom: auto;
@@ -22,14 +96,6 @@
     background-color: rgba(189, 197, 228, 0.47);
     border: 3px solid #041154;
     margin: 2%;
-}
-
-#index-body {
-   background-image: url(images/back3.jpg);
-   background-position: center center;
-   background-attachment: fixed;
-   background-repeat: no-repeat;
-   background-size: cover;
 }
 
 #homePage-container {
@@ -87,114 +153,7 @@ p {
     padding-bottom: 4%;
 }
 
-/* CSS for Navigation Bar */
-#nav-button {
-    border-radius: .30rem;
-    width: 150px;
-    height: 63px;
-    border: 1px solid white;
-    background-color: #041154;
-    color: WHITE;
-    transition: background-color 500ms, color 500ms;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 130%;
-    font-family: 'PT Sans Caption';
-}
-
-#nav-button:hover {
-    background-color: white;
-    color:#041154;
-    border: 1px solid #041154;
-    transition: background-color 500ms, color 500ms;  
-}
-
-#nav-bar {
-    width: 85%;
-    margin: auto;
-    font-size: 30px;
-}
-
-#all-nav-links{
-    display: flex;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border: 1.5px solid white;
-    border-radius: 1rem;
-    background: #041154; 
-}
-
-#nav-link{
-    list-style-type: none;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 25px;
-    text-align: center;
-    margin-bottom: auto;
-    margin-top: auto;
-}
-
-#proj-link {
-    list-style-type: none;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: auto;
-    margin-top: auto;
-}
-
-a, a:visited {
-    text-decoration: none;
-    color: white;
-    font-family: 'Average Sans';
-}
-
-/* CSS for gallery.html */
-#galleryH1 {
-    text-align: center;
-    border: double 6px #780e0e;
-    color: #780e0e;
-    margin-bottom: 10px;
-}
-
-.galleryP {
-    color: #780e0e;
-    margin-bottom: 5px;
-}
-
-#column {
-  float: left;
-  width: 28%;
-  margin: 10px;
-  box-shadow: 0 0 5px 1px #555;
-}
-
-#column img {
-  width: 100%;
-  opacity: 1; 
-  cursor: pointer; 
-}
-
-#gallery_body {
-    background-image: url(images/back3.jpg);
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* CSS for aboutMe.html */
-#aboutMe_body {
-    background-image: url(images/back3.jpg);
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
+/* CSS for About Me Page */
 #aboutMe-container {
     border: 1.5px solid #041154;
     background-color: rgba(255, 255, 255, 0.42);
@@ -265,6 +224,7 @@ a, a:visited {
 #i-am-para {
     color: white;
     text-align: center;
+    font-family: 'Average Sans';
 }
 
 #i-am-phrase {
@@ -278,6 +238,7 @@ a, a:visited {
     vertical-align: middle;
     color: #041154;
     letter-spacing: 2px;
+    font-family: 'Average Sans';
 }
 
 .shortDescription {
@@ -341,8 +302,71 @@ a, a:visited {
     border-bottom: 2px dotted #c98b7b;
 }
 
-/* CSS for connect.html */
+/* CSS for Projects Page */
+#project-container {
+    margin-right: -8px;
+    margin-left: -8px;
+    border: 1px solid black;
+}
 
+#project-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+#grid-inside {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin: 0px 30px 0px 30px;
+    background-color: #d9eff3;
+}
+
+#grid-pic {
+    width: 90%;
+    margin-top: 3%;
+}
+
+/*
+#galleryH1 {
+    text-align: center;
+    border: double 6px #780e0e;
+    color: #780e0e;
+    margin-bottom: 10px;
+}
+
+.galleryP {
+    color: #780e0e;
+    margin-bottom: 5px;
+}
+
+#column {
+  float: left;
+  width: 28%;
+  margin: 10px;
+  box-shadow: 0 0 5px 1px #555;
+}
+
+#column img {
+  width: 100%;
+  opacity: 1; 
+  cursor: pointer; 
+}
+
+#gallery_body {
+    background-image: url(images/back3.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+/* CSS for connect.html */
 #connect_body {
    background-image: url(images/background.jpeg);
    background-position: center center;
