@@ -14,7 +14,7 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 130%;
-    font-family: 'PT Sans Caption';
+    font-family: 'Average Sans';
 }
 
 #nav-button:hover {
@@ -224,6 +224,7 @@ p {
 #i-am-para {
     color: white;
     text-align: center;
+    font-family: 'Average Sans';
 }
 
 #i-am-phrase {
@@ -305,18 +306,30 @@ p {
 #project-container {
     margin-right: -8px;
     margin-left: -8px;
-    background-color: white;
     border: 1px solid black;
-    height: 50vh;
 }
 
 #project-grid {
     display: grid;
-    grid-template-columns: auto auto;
-    margin-left: 10%;
-    margin-right: 10%;
+    grid-template-columns: auto auto auto;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-top: 5%;
     margin-bottom: 5%;
+    text-align: center;
+}
+
+#grid-inside {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin: 0px 30px 0px 30px;
+    background-color: #d9eff3;
+}
+
+#grid-pic {
+    width: 90%;
+    margin-top: 3%;
 }
 
 /*
