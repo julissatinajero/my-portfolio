@@ -12,6 +12,75 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+//list of phrases for About Me page
+const PAGE_PHRASES = [ 
+  "proud Latina", 
+  "Computer Scientist", 
+  "first-gen student"
+];
+
+var currrentPhrase = 0;
+var letterIndex = 0; 
+var intervalVal;
+
+// Element that holds the text
+var element = document.getElementById("phrases");
+// Cursor element 
+var cursor = document.getElementById("cursor");
+
+/**
+ * Function which implements the typing animation.
+ */
+function type() { 
+  var displayedText =  PAGE_PHRASES[currrentPhrase].substring(0, letterIndex + 1);
+  console.log(displayedText); 
+  element.innerText = displayedText;
+  letterIndex++;
+
+  // If full sentence has been displayed then start to delete the sentence after some time
+  if(displayedText === PAGE_PHRASES[currrentPhrase]) {
+    // Hide the cursor
+    //cursor.style.display = 'none';
+
+    clearInterval(intervalVal);
+    setTimeout(function() {
+      intervalVal = setInterval(deleting, 50);
+    }, 1000);
+}
+}
+
+/**
+ * Function which implements the deleting effect for the typing animation.
+ */
+function deleting() {
+  // Get substring with 1 characater deleted
+  var displayedText =  PAGE_PHRASES[currrentPhrase].substring(0, letterIndex - 1);
+  element.innerText = displayedText;
+  letterIndex--;
+
+  // If sentence has been deleted then start to display the next sentence
+  if(displayedText === '') {
+    clearInterval(intervalVal);
+
+    // If current sentence was last then display the first one, else move to the next
+    if(currrentPhrase== (PAGE_PHRASES.length - 1))
+        currrentPhrase= 0;
+    else
+        currrentPhrase++;
+    
+    letterIndex = 0;
+
+    // Start to display the next sentence after some time
+    setTimeout(function() {
+        cursor.style.display = 'inline-block';
+        intervalVal = setInterval(type, 130);
+    }, 200);
+  }
+}
+
+// Start the typing effect on load
+intervalVal = setInterval(type, 130);
+
 
 //Adds a random fact to the page.
 function addRandomFact(){
