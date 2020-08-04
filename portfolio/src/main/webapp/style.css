@@ -476,3 +476,8 @@ p {
     display: grid;
     grid-template-columns: auto auto;
 }
+
+ul {
+    color: white;
+    list-style-type: none;
+}

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body class="background">
+  <body class="background" onload="getMessages()">
       <nav id="nav-bar">
             <ul id="all-nav-links">
                 <li id="nav-link"><a href="index.html">Home</a></li>
@@ -50,9 +50,9 @@
                 </form>
                 <!--<button onclick="getMessages()" id="getMessageButton">See Messages</button> 
                 <ul id= "message_history"></ul> -->
-                <div id="display-messages"> 
+                <ul id="display-messages"> 
                     
-                </div>
+                </ul>
           </div>
       </div>
     </body>
