@@ -43,12 +43,16 @@
           <p id="connect-para">Please leave messages or feedback!</p>
           <div class="messagesForm">
                 <form action="/data" method="POST">
+                    <textarea name="name" class="messageBox" rows="1" placeholder="Type your name here"></textarea>
                     <textarea name="text-input" class="messageBox" rows="4" placeholder="Type your message here"></textarea>
                     <br></br>
                     <button type="submit" class="submitMessageButton">Submit</button> 
                 </form>
-                <button onclick="getMessages()" id="getMessageButton">See Messages</button>
-                <ul id= "message_history"></ul>
+                <!--<button onclick="getMessages()" id="getMessageButton">See Messages</button> 
+                <ul id= "message_history"></ul> -->
+                <div id="display-messages"> 
+                    
+                </div>
           </div>
       </div>
     </body>

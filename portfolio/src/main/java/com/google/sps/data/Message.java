@@ -16,12 +16,18 @@ package com.google.sps.data;
 
 public final class Message {
 
-  private final long id;
+  //private final long id;
+  private final String name;
   private final String comment;
   private final long timestamp;
 
-  public Message(long id, String comment, long timestamp) {
-    this.id = id;
+  //public Message(long id, String comment, long timestamp) {
+    //this.id = id;
+    //this.comment = comment;
+    //this.timestamp = timestamp;
+  //}
+  public Message(String name, String comment, long timestamp) {
+    this.name = name;
     this.comment = comment;
     this.timestamp = timestamp;
   }
