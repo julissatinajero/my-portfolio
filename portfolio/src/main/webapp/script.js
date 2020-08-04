@@ -122,12 +122,10 @@ function getMessages() {
     //const userName = messages.name + " commented: ";
     //const comment = messages.comment;
     commentsContainer.innerHTML = '';
-    for (i = 0; i < messages.length; i++){
+    for (i = 0; i < messages.length; ++i){
         console.log(messages.name + " " + messages.comment);
-        commentsContainer.appendChild(createListElement(messages[i].name + " commented: " + messages[i].comment));
+        commentsContainer.appendChild(createDivElement(messages[i].name, messages[i].comment));
     }
-    //commentsContainer.innerHTML += "<br>" + userName + "<br>";
-    //commentsContainer.innerHTML += comment;
     });
 }
 
@@ -139,8 +137,10 @@ function getMessages() {
 //}
 
 // Creates an <li> element containing text
-function createListElement(text) {
-  const listElement = document.createElement('li');
-  listElement.innerText = text;
-  return listElement;
+function createDivElement(textName, textComment) {
+    const divElement = document.createElement('div');
+    divElement.setAttribute("class", "singleComment");
+    var commented = " commented: ";
+    divElement.innerText = textName + commented + textComment;
+    return divElement;
 }

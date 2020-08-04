@@ -39,7 +39,7 @@
       </div>
 
       <div id = "aboutMe-container">
-          <h1 id = "connect-heading">Messages</h1>
+          <h1 id = "connect-heading">Comments</h1>
           <p id="connect-para">Please leave messages or feedback!</p>
           <div class="messagesForm">
                 <form action="/data" method="POST">
@@ -50,9 +50,10 @@
                 </form>
                 <!--<button onclick="getMessages()" id="getMessageButton">See Messages</button> 
                 <ul id= "message_history"></ul> -->
-                <ul id="display-messages"> 
-                    
-                </ul>
+                <div id="messages-container">
+                    <h2 id="prevComments-heading">Previous Comments</h2>
+                    <div id="display-messages"> </div>
+                </div>
           </div>
       </div>
     </body>
