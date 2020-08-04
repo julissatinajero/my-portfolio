@@ -100,6 +100,7 @@ function addRandomFact(){
   factContainer.innerText = fact;
 }
 
+/** 
 // Fetches messages from the server and adds them to the DOM.
 function getMessages() {
     fetch('/data').then(response => response.json()).then((messages) => {
@@ -110,11 +111,36 @@ function getMessages() {
         messageListElement.appendChild(createListElement(messages[i].comment));
     }
     });
+} */
+
+// Fetches messages from the server and adds them to the DOM.
+function getMessages() {
+    fetch('/data').then(response => response.json()).then((messages) => {
+
+    console.log(messages);
+    const commentsContainer = document.getElementById('display-messages');
+    //const userName = messages.name + " commented: ";
+    //const comment = messages.comment;
+    commentsContainer.innerHTML = '';
+    for (i = 0; i < messages.length; ++i){
+        console.log(messages.name + " " + messages.comment);
+        commentsContainer.appendChild(createDivElement(messages[i].name, messages[i].comment));
+    }
+    });
 }
 
 // Creates an <li> element containing text
-function createListElement(text) {
-  const liElement = document.createElement('li');
-  liElement.innerText = text;
-  return liElement;
+//function createListElement(text) {
+//  const liElement = document.createElement('li');
+//  liElement.innerText = text;
+//  return liElement;
+//}
+
+// Creates an <li> element containing text
+function createDivElement(textName, textComment) {
+    const divElement = document.createElement('div');
+    divElement.setAttribute("class", "singleComment");
+    var commented = " commented: ";
+    divElement.innerText = textName + commented + textComment;
+    return divElement;
 }

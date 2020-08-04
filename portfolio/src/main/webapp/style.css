@@ -476,3 +476,25 @@ p {
     display: grid;
     grid-template-columns: auto auto;
 }
+
+#prevComments-heading {
+    color: #041154;
+    font-size: 21px;
+    padding-top: 20px;
+    font-family: 'Average Sans';
+    margin-left: 5%;
+}
+
+.singleComment {
+    color: white;
+    font-size: 18px;
+    font-family: 'Average Sans';
+    border: 1px solid white;
+    border-bottom: 2px solid white;
+    background: #041154;
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 0.2rem;
+}
