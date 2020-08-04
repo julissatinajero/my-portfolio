@@ -68,7 +68,7 @@ public class DataServlet extends HttpServlet {
         datastore.put(messageEntity);
 
         // Redirect back to the HTML page.
-        response.sendRedirect("/commentSection.html");
+        response.sendRedirect("/connect.html");
     }
 
 }

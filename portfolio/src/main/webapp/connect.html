@@ -4,29 +4,53 @@
     <meta charset="UTF-8">
     <title>Connect</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body class="background">
+      <nav id="nav-bar">
+            <ul id="all-nav-links">
+                <li id="nav-link"><a href="index.html">Home</a></li>
+                <li id="nav-link"><a href="aboutMe.html">About Me</a></li>
+                <li id="proj-link"><a href="projects.html">Projects/<br>Experience</a></li>
+                <li id="nav-link"><a href="connect.html">Lets Connect</a></li>
+            </ul>
+      </nav>
 
-    <style> 
-      @import url('https://fonts.googleapis.com/css?family=Sofia');
-      @import url('https://fonts.googleapis.com/css?family=Average Sans');
-      h1 {font-family: 'Sofia';}
-      p {font-family: 'Average Sans'}
-    </style>
-    </head>
-  <body id = "connect_body">
-      <div id = "theBorder">
-      <h1 class = "connect_Heading">Let's Connect!</h1>
-      <p class="connect_Para"> Click on the icons! Don't hesitate to connect with me in all of the following :)</p>
-                  <button id="returnHome_button" class="fromConnect" onclick="location.href='index.html'">Home Page</button>
-              <li id="icon">
-                  <a href="https://www.linkedin.com/in/julissa-tinajero/">
-                  <img src="https://img.icons8.com/ios/80/000000/linkedin.png"/></li>
-              <li id="icon">
-                  <a href="https://github.com/julissatinajero">
-                  <img src="https://img.icons8.com/ios/80/000000/github.png"/></li>
-              <li id="icon">
-                  <a href="https://www.instagram.com/jt.julissa/">
-                  <img src="https://img.icons8.com/ios/80/000000/instagram-new.png"/></li>
+      <div id = "aboutMe-container">
+            <h1 id = "connect-heading">Let's Connect!</h1>
+            <p id="connect-para"> Click on the icons! Don't hesitate to connect with me in all of the following :) </p>
+            <div id="icon-container">
+                <div id="icon-box">
+                    <li id="icon"><a href="https://www.linkedin.com/in/julissa-tinajero/">
+                    <img src="https://img.icons8.com/ios/80/000000/linkedin.png"/></a>
+                    </li>
+                </div>
+                <div id="icon-box">
+                    <li id="icon"><a href="https://github.com/julissatinajero">
+                    <img src="https://img.icons8.com/ios/80/000000/github.png"/></a>
+                    </li> 
+                </div>
+                <div id="icon-box">
+                    <li id="icon"><a href="https://www.instagram.com/jt.julissa/">
+                    <img src="https://img.icons8.com/ios/80/000000/instagram-new.png"/></a>
+                    </li> 
+                </div>
+            </div>
       </div>
-      </body>
+
+      <div id = "aboutMe-container">
+          <h1 id = "connect-heading">Messages</h1>
+          <p id="connect-para">Please leave messages or feedback!</p>
+          <div class="messagesForm">
+                <form action="/data" method="POST">
+                    <textarea name="text-input" class="messageBox" rows="4" placeholder="Type your message here"></textarea>
+                    <br></br>
+                    <button type="submit" class="submitMessageButton">Submit</button> 
+                </form>
+                <button onclick="getMessages()" id="getMessageButton">See Messages</button>
+                <ul id= "message_history"></ul>
+          </div>
+      </div>
+    </body>
       <footer id="iconCredits"> <a href="https://icons8.com">Icons by Icons8</a> </footer>
 </html>
