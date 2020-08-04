@@ -35,6 +35,7 @@ public class DataServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        /**
         Query query = new Query("Message").addSort("timestamp", SortDirection.DESCENDING);
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         PreparedQuery results = datastore.prepare(query);
@@ -52,12 +53,31 @@ public class DataServlet extends HttpServlet {
         Gson gson = new Gson();
 
         response.setContentType("application/json");
+        response.getWriter().println(gson.toJson(messages)); **/
+
+        Query query = new Query("Message").addSort("name", SortDirection.DESCENDING);
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        PreparedQuery results = datastore.prepare(query);
+
+        List<Message> messages = new ArrayList<>();
+        for (Entity entity : results.asIterable()) 
+        {
+            String name = (String) entity.getProperty("name");
+            String comment = (String) entity.getProperty("comment");
+            long timestamp = (long) entity.getProperty("timestamp");
+
+            Message message = new Message(name, comment, timestamp);
+            messages.add(message);
+        }
+        Gson gson = new Gson();
+
+        response.setContentType("application/json");
         response.getWriter().println(gson.toJson(messages));
     }
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String theComment = request.getParameter("text-input");
+        /**String theComment = request.getParameter("text-input");
         long timestamp = System.currentTimeMillis();
 
         Entity messageEntity = new Entity("Message");
@@ -68,7 +88,30 @@ public class DataServlet extends HttpServlet {
         datastore.put(messageEntity);
 
         // Redirect back to the HTML page.
+        response.sendRedirect("/connect.html"); **/
+
+        String userName = getParameter(request, "name", "Anonymous");
+        String theComment = getParameter(request, "text-input", "");
+        long timestamp = System.currentTimeMillis();
+
+        Entity messageEntity = new Entity("Message");
+        messageEntity.setProperty("name", userName);
+        messageEntity.setProperty("comment", theComment);
+        messageEntity.setProperty("timestamp", timestamp);
+
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        datastore.put(messageEntity);
+
+        // Redirect back to the HTML page.
         response.sendRedirect("/connect.html");
+    }
+
+    private String getParameter(HttpServletRequest request, String name, String defaultValue) {
+        String theName = request.getParameter(name);
+        if (theName == null) {
+            return defaultValue;
+        }
+        return theName;
     }
 
 }
