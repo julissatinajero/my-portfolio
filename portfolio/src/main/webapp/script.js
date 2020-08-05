@@ -16,7 +16,9 @@
 const PAGE_PHRASES = [ 
   "proud Latina", 
   "Computer Scientist", 
-  "first-gen student"
+  "first-gen student",
+  "woman in STEM"
+
 ];
 
 var currrentPhrase = 0;
