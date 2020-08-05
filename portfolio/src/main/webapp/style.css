@@ -306,7 +306,6 @@ p {
 #project-container {
     margin-right: -8px;
     margin-left: -8px;
-    border: 1px solid black;
 }
 
 #project-grid {
@@ -317,6 +316,9 @@ p {
     margin-top: 5%;
     margin-bottom: 5%;
     text-align: center;
+    border: 1.5px solid #041154;
+    background-color: rgba(255, 255, 255, 0.42);
+    padding: 3%;
 }
 
 #grid-inside {
@@ -324,12 +326,42 @@ p {
     transition: 0.3s;
     border-radius: 5px;
     margin: 0px 30px 0px 30px;
-    background-color: #d9eff3;
+    background-color: #f9f9fb9e;
 }
 
 #grid-pic {
     width: 90%;
     margin-top: 3%;
+}
+
+#project-titles {
+    color: #041154;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Average Sans';
+    display: inline-flex;
+}
+
+#project-type {
+    margin-left: 2%;
+    color: #041154;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Average Sans';
+    display: inline-flex;
+}
+
+#proj-description {
+    color: #041154;
+    font-size: 15px;
+    font-family: 'Average Sans';
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+#proj-links {
+    color: #6614e6;
 }
 
 /*
