@@ -226,6 +226,7 @@ p {
 
 #i-am {
     text-align: center;
+    padding-left: 3%;
 }
 
 #i-am-para {
@@ -248,23 +249,29 @@ p {
 }
 
 #quick-fact-container {
-    min-height: 300px;
     background-color: #041154;
     margin-left: -10px;
     margin-right: -10px;
     margin-top: 5%;
-    display: grid;
-    grid-template-columns: auto 10% auto;
-    padding: 5% 10%;
+    padding: 2% 3%;
+    display: flex;
+}
+
+#quick-fact-div {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 #quick-fact-heading {
     color: white;
-    text-align: center;
     font-family: 'Average Sans';
     margin-top: auto;
     margin-bottom: auto;
     letter-spacing: 2px;
+    text-align: center;
 }
 
 #quick-fact-bio {
@@ -275,9 +282,12 @@ p {
 }
 
 #school-fact {
-    margin-bottom: 10%;
-    font-size: 25px;
+    margin-top: 5%;
+    font-size: 23px;
     color: white;
+    margin-left: 15%;
+    text-align: left;
+    line-height: 40px;
 }
 
 /* Delete later*/
