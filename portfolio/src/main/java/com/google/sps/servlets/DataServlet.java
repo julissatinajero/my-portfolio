@@ -76,9 +76,11 @@ public class DataServlet extends HttpServlet {
     private String getParameter(HttpServletRequest request, String name, String defaultValue) {
         String theName = request.getParameter(name);
         if (theName.equals("")) {
-            return noName;
+            return defaultValue;
         }
-        return theName;
+        else{
+            return theName;
+        }
     }
 
 }

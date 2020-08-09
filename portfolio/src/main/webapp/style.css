@@ -8,7 +8,7 @@
     width: 150px;
     height: 63px;
     border: 1px solid white;
-    background-color: #041154;
+    background-color: #080846;
     color: WHITE;
     transition: background-color 500ms, color 500ms;
     margin-left: auto;
@@ -19,8 +19,8 @@
 
 #nav-button:hover {
     background-color: white;
-    color:#041154;
-    border: 1px solid #041154;
+    color:#080846;
+    border: 1px solid #080846;
     transition: background-color 500ms, color 500ms;  
 }
 
@@ -38,7 +38,7 @@
     padding-bottom: 2px;
     border: 1.5px solid white;
     border-radius: 1rem;
-    background: #041154; 
+    background: #080846; 
 }
 
 #nav-link{
@@ -93,8 +93,8 @@ a, a:visited {
     border: 3px solid rgba(255, 255, 255, 0.5); */
 
     border-radius: 1rem;
-    background-color: rgba(189, 197, 228, 0.47);
-    border: 3px solid #041154;
+    background-color: rgba(189, 197, 228, 0.52);
+    border: 3px solid #080846;
     margin: 2%;
 }
 
@@ -107,12 +107,12 @@ a, a:visited {
 }
 
 #headshot{
-    border: solid;
-    border-radius: 46%;
-    width: 356px;
+    border-radius: 43%;
+    width: 376px;
+    height: 380px;
     margin-left: auto;
     margin-right: auto;
-    border-color: #041154;
+    border: 1px solid #080846;
 }
 
 #mainH1 {
@@ -144,19 +144,21 @@ p {
 } */
 
 #button-container {
+    /*
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto;*/
     padding-top: 2%;
     grid-gap: 30px;
     padding-left: 2%;
     padding-right: 2%;
     padding-bottom: 4%;
+    display: flex;
 }
 
 /* CSS for About Me Page */
 #aboutMe-container {
-    border: 1.5px solid #041154;
-    background-color: rgba(255, 255, 255, 0.42);
+    /*border: 1.5px solid #041154;*/
+    background-color: rgba(189, 197, 228, 0.52);
     margin-left: 8%;
     margin-right: 8%;
     margin-top: 5%;
@@ -179,10 +181,12 @@ p {
     color: white;
     margin-bottom: -1%;
     font-family: 'Average Sans';
+    letter-spacing: 1px;
 }
 
 #polaroid-selfie img{
-    width: 90%;
+    width: 88%;
+    border: 2px groove #041154;
 }
 
 #aboutMePolaroid {
@@ -194,31 +198,36 @@ p {
 }
 
 .polaroid-name {
-    font-size: 130%;
+    font-size: 150%;
     font-family: 'Homemade Apple';
+    margin-bottom: -.5%;
+    margin-top: 3%;
 }
 
 #polaroid-selfie {
-  text-align:center;
-  display:inline-block;
-  list-style:none;
-  position:relative;
-  border:solid 12px #fff;
-  background:#fff;
-  box-shadow:0 0 15px 0px #555;
+    text-align:center;
+    display:inline-block;
+    list-style:none;
+    position:relative;
+    border:solid 12px #fff;
+    background:#fff;
+    box-shadow:0 0 15px 0px #555;
+    margin-top: 5%;
 }
 
 #aboutMe-intro {
-    display: grid;
-    grid-template-columns: auto auto;
+    /*display: grid;
+    grid-template-columns: auto auto;*/
     padding-left: 60px;
     padding-right: 60px;
     padding-top: 20px;
     padding-bottom: 40px;
+    display: flex;
 }
 
 #i-am {
     text-align: center;
+    padding-left: 3%;
 }
 
 #i-am-para {
@@ -237,20 +246,94 @@ p {
     display: inline-block;
     vertical-align: middle;
     color: #041154;
-    letter-spacing: 2px;
     font-family: 'Average Sans';
 }
 
-.shortDescription {
-    padding: 20px;
-    text-align: left;
-    padding-left: 50px;
-    padding-right: 45px;
-    font-size: 110%;
-    border: dotted #c98b7b;
-    background-color: #ffede3;
-    color: #8f1c11;
+/* fact section */
+#quick-fact-container {
+    background-color: #080846;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: 5%;
+    padding: 2% 3%;
+    display: flex;
 }
+
+#quick-fact-div {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#quick-fact-heading {
+    color: white;
+    font-family: 'Average Sans';
+    margin-top: auto;
+    margin-bottom: auto;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#quick-fact-bio {
+    color: white;
+    text-align: left;
+    font-family: 'Average Sans';
+    font-size: 20px;
+}
+
+#school-fact {
+    margin-top: 5%;
+    font-size: 23px;
+    color: white;
+    margin-left: 15%;
+    text-align: left;
+    line-height: 40px;
+}
+
+/* gallery */
+#gallery {
+    padding: 5%;
+    background-color: rgba(189, 197, 228, 0.52);
+    margin: 5%;
+    text-align: center;
+}
+
+#gallery-heading {
+    color: #041154;
+    font-family: 'Sofia';
+    margin-top: -4%;
+    text-align: center;
+    font-size: 300%;
+    letter-spacing: 5px;
+}
+
+#below-gallery-heading {
+    color: #041154;
+    font-family: 'Sofia';
+    margin-top: -2%;
+    text-align: center;
+    font-size: 120%;
+}
+
+#column {
+    margin: 10px;
+    box-shadow: 0 0 5px 1px #46494a;
+}
+
+#column img {
+    width: 100%;
+    display: block;
+}
+
+#allbox {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 0% -5% -4%;
+}
+
+/* Delete later*/
 
 #randomFact {
     margin-left: 25%;
@@ -306,65 +389,140 @@ p {
 #project-container {
     margin-right: -8px;
     margin-left: -8px;
-    border: 1px solid black;
 }
 
 #project-grid {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    /*display: grid;
+    grid-template-columns: auto auto auto; */
+    margin: 5%;
     text-align: center;
+    border: 1.5px solid #041154;
+    background-color: rgba(189, 197, 228, 0.47);
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: inline-flex;
+}
+
+#side-title {
+    font-family: 'Sofia';
+    font-size: 140%;
+    color: white;
+    margin: auto;
+    padding: 10px;
+    background: #080846;
 }
 
 #grid-inside {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     transition: 0.3s;
     border-radius: 5px;
-    margin: 0px 30px 0px 30px;
-    background-color: #d9eff3;
+    margin: 0px 20px 0px 20px;
+    background-color: #ffffffd4;
 }
 
 #grid-pic {
-    width: 90%;
-    margin-top: 3%;
+    width: 275px;
+    height: 173px;
 }
 
-/*
-#galleryH1 {
+.gif {
+    pointer-events: none;
+}
+
+#project-titles {
+    color: #041154;
+    font-size: 20px;
     text-align: center;
-    border: double 6px #780e0e;
-    color: #780e0e;
-    margin-bottom: 10px;
+    font-family: 'Average Sans';
+    display: inline-flex;
 }
 
-.galleryP {
-    color: #780e0e;
-    margin-bottom: 5px;
+#project-type {
+    margin-left: 2%;
+    color: #041154;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Average Sans';
+    display: inline-flex;
 }
 
-#column {
-  float: left;
-  width: 28%;
-  margin: 10px;
-  box-shadow: 0 0 5px 1px #555;
+#proj-description {
+    color: #041154;
+    font-size: 15px;
+    font-family: 'Average Sans';
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
 }
 
-#column img {
-  width: 100%;
-  opacity: 1; 
-  cursor: pointer; 
+#proj-links {
+    color: #0244ff;
 }
 
-#gallery_body {
-    background-image: url(images/back3.jpg);
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
+#work-programs-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#work-grid {
+    margin: 5%;
+    text-align: center;
+    border: 1.5px solid #041154;
+    background-color: rgba(189, 197, 228, 0.47);
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#top-title {
+    font-family: 'Sofia';
+    font-size: 140%;
+    color: white;
+    margin-top: -2.5%;
+    padding: 4px;
+    background: #080846;
+}
+
+#job-title {
+    text-align: left;
+    color: #080846;
+    font-family: 'Average Sans';
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 105%;
+    letter-spacing: 1px;
+}
+
+#time {
+    text-align: left;
+    color: #080846;
+    font-family: 'Average Sans';
+    padding-left: 10px;
+    font-size: 90%;
+    margin-top: -3%;
+}
+
+#job-description {
+    text-align: left;
+    color: #080846;
+    font-family: 'Average Sans';
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    
+}
+
+#job-duties {
+    text-align: left;
+    color: #080846;
+    font-family: 'Average Sans';
+    line-height: 1.5;
+    padding-right: 35px;
+}
+
+#googlePic {
+    width: 90%;
+    margin: 5px;
+}
 
 /* CSS for connect.html */
 #connect-heading {
