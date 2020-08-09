@@ -416,7 +416,7 @@ p {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     transition: 0.3s;
     border-radius: 5px;
-    margin: 0px 30px 0px 30px;
+    margin: 0px 20px 0px 20px;
     background-color: #ffffffd4;
 }
 
@@ -482,8 +482,41 @@ p {
     background: #080846;
 }
 
-#workPic {
-    width: 30%;
+#job-title {
+    text-align: left;
+    color: #080846;
+    font-family: 'Average Sans';
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 105%;
+    letter-spacing: 1px;
+}
+
+#time {
+    text-align: left;
+    color: #080846;
+    font-family: 'Average Sans';
+    padding-left: 10px;
+    font-size: 90%;
+    margin-top: -3%;
+}
+
+#job-description {
+    text-align: left;
+    color: #080846;
+    font-family: 'Average Sans';
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    
+}
+
+#job-duties {
+    text-align: left;
+    color: #080846;
+    font-family: 'Average Sans';
+    line-height: 1.5;
+    padding-right: 35px;
 }
 
 #googlePic {
