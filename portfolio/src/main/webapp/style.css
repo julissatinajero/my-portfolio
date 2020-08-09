@@ -157,8 +157,8 @@ p {
 
 /* CSS for About Me Page */
 #aboutMe-container {
-    border: 1.5px solid #041154;
-    background-color: rgba(255, 255, 255, 0.42);
+    /*border: 1.5px solid #041154;*/
+    background-color: rgba(189, 197, 228, 0.47);
     margin-left: 8%;
     margin-right: 8%;
     margin-top: 5%;
@@ -185,7 +185,8 @@ p {
 }
 
 #polaroid-selfie img{
-    width: 85%;
+    width: 88%;
+    border: 2px groove #041154;
 }
 
 #aboutMePolaroid {
@@ -248,6 +249,7 @@ p {
     font-family: 'Average Sans';
 }
 
+/* fact section */
 #quick-fact-container {
     background-color: #041154;
     margin-left: -10px;
@@ -290,17 +292,47 @@ p {
     line-height: 40px;
 }
 
-/* Delete later*/
-.shortDescription {
-    padding: 20px;
-    text-align: left;
-    padding-left: 50px;
-    padding-right: 45px;
-    font-size: 110%;
-    border: dotted #c98b7b;
-    background-color: #ffede3;
-    color: #8f1c11;
+/* gallery */
+#gallery {
+    padding: 5%;
+    background-color: rgba(189, 197, 228, 0.47);
+    margin: 5%;
+    text-align: center;
 }
+
+#gallery-heading {
+    color: #041154;
+    font-family: 'Sofia';
+    margin-top: -2%;
+    text-align: center;
+    font-size: 300%;
+    letter-spacing: 5px;
+}
+
+#below-gallery-heading {
+    color: #041154;
+    font-family: 'Sofia';
+    margin-top: -2%;
+    text-align: center;
+    font-size: 120%;
+}
+
+#column {
+    margin: 10px;
+    box-shadow: 0 0 5px 1px #46494a;
+}
+
+#column img {
+    width: 100%;
+    display: block;
+}
+
+#allbox {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+/* Delete later*/
 
 #randomFact {
     margin-left: 25%;
@@ -367,10 +399,19 @@ p {
     margin-bottom: 5%;
     text-align: center;
     border: 1.5px solid #041154;
-    background-color: rgba(255, 255, 255, 0.42);
+    background-color: rgba(189, 197, 228, 0.47);
     padding-top: 2%;
     padding-bottom: 2%;
     display: inline-flex;
+}
+
+#side-title {
+    font-family: 'Sofia';
+    font-size: 140%;
+    color: white;
+    margin: auto;
+    padding: 10px;
+    background: #080846;
 }
 
 #grid-inside {
@@ -378,7 +419,7 @@ p {
     transition: 0.3s;
     border-radius: 5px;
     margin: 0px 30px 0px 30px;
-    background-color: #f9f9fb9e;
+    background-color: #ffffffd4;
 }
 
 #grid-pic {
@@ -413,42 +454,8 @@ p {
 }
 
 #proj-links {
-    color: #6614e6;
+    color: #0244ff;
 }
-
-/*
-#galleryH1 {
-    text-align: center;
-    border: double 6px #780e0e;
-    color: #780e0e;
-    margin-bottom: 10px;
-}
-
-.galleryP {
-    color: #780e0e;
-    margin-bottom: 5px;
-}
-
-#column {
-  float: left;
-  width: 28%;
-  margin: 10px;
-  box-shadow: 0 0 5px 1px #555;
-}
-
-#column img {
-  width: 100%;
-  opacity: 1; 
-  cursor: pointer; 
-}
-
-#gallery_body {
-    background-image: url(images/back3.jpg);
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
 
 /* CSS for connect.html */
 #connect-heading {
