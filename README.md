@@ -1,12 +1,6 @@
-# Google Software Product Sprint
+# Julissa's Portfolio - Google Software Product Sprint
 
-This repo contains Julissa's portfolio and SPS projects.
+Link: http://julissatinajero.com/
 
-To get started:
-
-- Login to [Google Cloud Shell](https://ssh.cloud.google.com/cloudshell/editor)
-- Clone this repo: `cd; git clone https://github.com/google/software-product-sprint.git`
-- Open the GitHub setup walkthrough: `teachme ~/software-product-sprint/walkthroughs/week-0-setup/github-setup-walkthrough.md`
-  - If the tutorial panel does not open or display the walkthrough contents, try refreshing the page.
-
-Then follow the on-screen instructions to set up your repo.
+Please check out the portfolio I designed and created during my time participating in 
+Google's Software Product Sprint program!
