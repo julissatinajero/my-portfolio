@@ -167,3 +167,4 @@ function requestTranslation() {
           resultContainer.innerText = translatedMessage;
         });
 }
+

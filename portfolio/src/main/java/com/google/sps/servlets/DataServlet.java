@@ -64,6 +64,8 @@ public class DataServlet extends HttpServlet {
         String theComment = getParameter(request, "text-input", "");
         long timestamp = System.currentTimeMillis();
 
+        //System.out.println("Name" + userName + ":" + theComment);
+
         Entity messageEntity = new Entity("Message");
         messageEntity.setProperty("name", userName);
         messageEntity.setProperty("comment", theComment);
@@ -75,25 +77,26 @@ public class DataServlet extends HttpServlet {
         // Redirect back to the HTML page.
         response.sendRedirect("/connect.html");
 
-        String originalText = request.getParameter("text");
-        String languageCode = request.getParameter("languageCode");
+        //String originalText = request.getParameter("text");
+        //String languageCode = request.getParameter("languageCode");
 
         // Do the translation.
-        Translate translate = TranslateOptions.getDefaultInstance().getService();
-        Translation translation =
-        translate.translate(originalText, Translate.TranslateOption.targetLanguage(languageCode));
-        String translatedText = translation.getTranslatedText();
+        //Translate translate = TranslateOptions.getDefaultInstance().getService();
+        //Translation translation =
+        //translate.translate(originalText, Translate.TranslateOption.targetLanguage(languageCode));
+        //String translatedText = translation.getTranslatedText();
 
          // Output the translation.
-        response.setContentType("text/html; charset=UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        response.getWriter().println(translatedText);
+        //response.setContentType("text/html; charset=UTF-8");
+        //response.setCharacterEncoding("UTF-8");
+        //response.getWriter().println(translatedText);
 
     }
 
     private String getParameter(HttpServletRequest request, String name, String defaultValue) {
         String theName = request.getParameter(name);
-        if (theName.equals("")) {
+
+        if (theName.isEmpty()) {
             return defaultValue;
         }
         else{
